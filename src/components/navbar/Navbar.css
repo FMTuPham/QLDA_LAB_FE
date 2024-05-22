@@ -1,0 +1,79 @@
+.navbar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  background: var(--primary-bg);
+}
+
+.navbar .navbar_infor {
+  text-transform: uppercase;
+  font-weight: 650 !important;
+  line-height: 1.5;
+  color: #676c70 !important;
+}
+
+@media (max-width: 576px) {
+  .navbar .navbar_infor_hidden {
+    display: none;
+  }
+}
+
+.navbar .navbar_right {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #676c70 !important;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .navbar .navbar_right .user_name_hidden {
+    display: none;
+  }
+}
+
+.counter {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.notification {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.notification:hover {
+  background: #d0d0d0;
+}
+
+.notiBg {
+  background: #e4e6eb;
+}
+
+.notiBgActive {
+  background: #e6f4ff;
+}
+
+.noti-card {
+  cursor: pointer;
+  position: relative;
+  height: 180px;
+  border: 1px solid #2e2e2e33;
+}

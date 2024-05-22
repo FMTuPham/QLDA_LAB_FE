@@ -5,6 +5,8 @@ import { useState } from 'react';
 import AdminSidebar from './AdminSidebar';
 import { Route, Routes } from 'react-router-dom';
 import MovieList from '../../components/MovieList';
+import CreateMovie from './createMovie/CreateMovie';
+import HeaderGeneral from '../../components/HeaderGeneral';
 
 function AdminScreen() {
   const [collapsed, setCollapsed] = useState(false);
@@ -17,23 +19,13 @@ function AdminScreen() {
       <Layout
         className='layout__right'
       >
-        <Header style={{ padding: 0, background: colorBgContainer }}>
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: '16px',
-              width: 64,
-              height: 64,
-            }}
-          />
-        </Header>
+        <HeaderGeneral collapsed={collapsed} setCollapsed={setCollapsed} />
         <Content
-          className='layout__content' 
+          className='layout__content'
         >
           <Routes>
             <Route path='/movieList' element={<MovieList />}/>
+            <Route path='/createMovie' element={<CreateMovie />}/>
           </Routes>
         </Content>
       </Layout>

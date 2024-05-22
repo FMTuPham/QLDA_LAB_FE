@@ -1,0 +1,61 @@
+.homepage {
+  margin-top: 70px;
+  position: relative;
+}
+
+.homepage .homepage__background {
+  display: block;
+  background-image: url('https://webnganh.vn/wp-content/uploads/2023/03/53871376284984_PTWQ.jpg');
+  /* background-image: url("@/assets/BKU.jpg"); */
+  width: 100%;
+  height: 80vh;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+.homepage .homepage__background .homepage__content {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.homepage .homepage__background .homepage__content h1 {
+  padding: 0;
+  color: #0073c0;
+  font-size: 40px;
+  font-style: normal;
+  line-height: 48px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  text-shadow:
+    -1px 0 wheat,
+    0 1px #fff,
+    1px 0 #ffffff,
+    0 -1px #ffffff;
+}
+
+.homepage .homepage__background .homepage__content p {
+  font-size: 52px;
+  margin-bottom: 25px;
+  color: blue;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  text-shadow:
+    -1px 0 #ffffff,
+    0 1px #fff,
+    1px 0 #ffffff,
+    0 -1px #ffffff;
+}
+
+@media (max-width: 768px) {
+  .homepage .homepage__background .homepage__content h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .homepage .homepage__background .homepage__content p {
+    font-size: 40px;
+  }
+}

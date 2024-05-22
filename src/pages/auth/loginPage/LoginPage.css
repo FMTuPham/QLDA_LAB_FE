@@ -1,0 +1,62 @@
+.login__screen {
+  background: var(--login-bg);
+  height: 100vh;
+  width: 100%;
+  padding-top: 10vh;
+}
+
+.login__screen .login__screen__container {
+  margin: 0 auto;
+  width: 900px;
+  background: var(--primary-bg);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 16.83px 0.17px;
+  border-radius: 20px;
+}
+
+.login__screen .login__screen__container .loginscreen__infor img {
+  width: 300px;
+  height: auto;
+  transition: 0.3s ease;
+}
+
+.login__screen .login__screen__container .loginscreen__infor .loginscreen__form {
+  min-width: 300px !important;
+  text-align: center;
+}
+
+.login__screen .login__screen__container .loginscreen__infor .loginscreen__form h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.7rem !important;
+  transition: 0.3s ease;
+}
+
+/* Responsive for small screens (assuming the breakpoint for sm is 576px) */
+@media (max-width: 576px) {
+  .login__screen .login__screen__container .loginscreen__infor img {
+    width: 150px !important;
+  }
+}
+
+/* Responsive for large screens (assuming the breakpoint for lg is 992px) */
+@media (max-width: 992px) {
+  .login__screen .login__screen__container {
+    width: auto !important;
+    max-width: 500px;
+  }
+
+  .login__screen .login__screen__container .loginscreen__infor {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px !important;
+  }
+
+  .login__screen .login__screen__container .loginscreen__infor img {
+    width: 200px !important;
+  }
+
+  .login__screen .login__screen__container .loginscreen__infor .loginscreen__form {
+    max-width: 300px !important;
+    min-width: max-content;
+  }
+}

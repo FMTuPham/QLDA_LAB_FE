@@ -2,14 +2,27 @@ import { UploadOutlined, UserOutlined, VideoCameraOutlined } from "@ant-design/i
 import { Menu } from "antd"
 import Sider from "antd/es/layout/Sider"
 import '../../css/_layout.css'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { logoutAPI } from "../../Api/service/auth.service"
+import { useAppDispatch } from "../../redux/hooks"
+import { resetUser } from "../../redux/features/userSlice"
 
 interface AdminSidebarProps {
   collapsed: boolean
   setCollapsed: React.Dispatch<React.SetStateAction<boolean>>
 }
-function AdminSidebar({ collapsed, setCollapsed }: Readonly<AdminSidebarProps>): JSX.Element {
 
+
+
+function AdminSidebar({ collapsed, setCollapsed }: Readonly<AdminSidebarProps>): JSX.Element {
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    logoutAPI()
+    dispatch(resetUser())
+    navigate('/homepage')
+  }
   return (
     <Sider
       trigger={null}
@@ -28,6 +41,17 @@ function AdminSidebar({ collapsed, setCollapsed }: Readonly<AdminSidebarProps>):
             icon: <UserOutlined />,
             label: (
               <Link
+                to='/createMovie'
+              >
+                Thêm phim mới
+              </Link>
+            ),
+          },
+          {
+            key: '2',
+            icon: <UserOutlined />,
+            label: (
+              <Link
                 to='/movieList'
               >
                 Danh sách phim
@@ -35,15 +59,17 @@ function AdminSidebar({ collapsed, setCollapsed }: Readonly<AdminSidebarProps>):
             ),
           },
           {
-            key: '2',
-            icon: <VideoCameraOutlined />,
-            label: 'nav 2',
-          },
-          {
             key: '3',
-            icon: <UploadOutlined />,
-            label: 'nav 3',
-          },
+            icon: <UserOutlined />,
+            label: (
+              <Link
+                to='/homepage'
+                onClick={handleLogout}
+              >
+                Đăng xuất
+              </Link>
+            ),
+          }
         ]}
       />
     </Sider>
